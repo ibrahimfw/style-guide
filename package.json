@@ -1,5 +1,5 @@
 {
-  "name": "style-guide",
+  "name": "fw-style-guide",
   "version": "0.0.1",
   "description": "Spectral rules for Freshworks API",
   "main": "index.yaml",
@@ -9,5 +9,14 @@
   "files": [
     "functions/**"
   ],
-  "author": "Mohamed Ibrahim"
+  "author": "Mohamed Ibrahim",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimfw/style-guide.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ibrahimfw/style-guide/issues"
+  },
+  "homepage": "https://github.com/ibrahimfw/style-guide#readme"
 }
