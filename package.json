@@ -1,0 +1,13 @@
+{
+  "name": "style-guide",
+  "version": "0.0.3",
+  "description": "Spectral rules for Freshworks API",
+  "main": "index.yaml",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "functions/**"
+  ],
+  "author": "Mohamed Ibrahim"
+}
