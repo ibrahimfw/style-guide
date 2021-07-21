@@ -1,6 +1,6 @@
 {
   "name": "style-guide",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "Spectral rules for Freshworks API",
   "main": "index.yaml",
   "scripts": {
