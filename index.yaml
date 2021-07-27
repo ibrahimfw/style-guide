@@ -41,6 +41,7 @@ rules:
     given: $.definitions..properties[*]~
     severity: error
     recommended: true
+    message: Schema property `{{property}}` should be in underscore case
     then:
       function: pattern
       functionOptions:
@@ -81,6 +82,27 @@ rules:
     given: $..parameters[?(@.in == 'path')].name
     severity: error
     recommended: true
+    message: Path param `{{value}}` should be in underscore case
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z0-9_]+$"
+  fw-query-param-underscore-case:
+    description: Parameter should be in underscore case
+    given: $..parameters[?(@.in == 'query')].name
+    severity: error
+    recommended: true
+    message: Query param `{{value}}` should be in underscore case
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z0-9_]+$"
+  fw-form-param-underscore-case:
+    description: Parameter should be in underscore case
+    given: $..parameters[?(@.in == 'formData')].name
+    severity: error
+    recommended: true
+    message: Form param `{{value}}` should be in underscore case
     then:
       function: pattern
       functionOptions:
