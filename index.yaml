@@ -9,7 +9,7 @@ rules:
   operation-operationId: error
   operation-tags: error
   fw-info-license:
-    description: There should be a license section in the info section
+    description: Info object should contain `license` object
     formats: [ "oas2", "oas3" ]
     given: $.info
     severity: error
@@ -18,7 +18,7 @@ rules:
       field: license
       function: truthy
   fw-operation-summary:
-    description: There should be a summary for each operation
+    description: Each operation should have `summary`
     formats: [ "oas2", "oas3" ]
     given: $.paths[*][*]
     severity: error
@@ -27,7 +27,7 @@ rules:
       field: summary
       function: truthy
   fw-schema-properties-example:
-    description: Properties of the schemas should have an example value defined
+    description: Schema properties should have an example value defined
     formats: [ "oas2" ]
     given: $.definitions..properties[*]
     severity: error
@@ -36,7 +36,7 @@ rules:
       field: example
       function: truthy
   fw-properties-underscore-case:
-    description: Properties of the schemas should be in underscore case
+    description: Schema properties should be in underscore case
     formats: [ "oas2" ]
     given: $.definitions..properties[*]~
     severity: error
@@ -47,7 +47,7 @@ rules:
       functionOptions:
         match: "^[a-z0-9_]+$"
   fw-no-local-definition:
-    description: Schema object should be defined in definitions
+    description: Schema object should be defined in `definitions`
     formats: [ "oas2" ]
     given: $.paths..schema
     severity: error
@@ -78,7 +78,7 @@ rules:
       functionOptions:
         match: "^\/(((api\/_)?)|([a-z0-9]+(-[a-z0-9]+)*))?(\/[a-z0-9]+(-[a-z0-9]+)*|\/{.+})*$"
   fw-path-param-underscore-case:
-    description: Parameter should be in underscore case
+    description: Path parameter should be in underscore case
     given: $..parameters[?(@.in == 'path')].name
     severity: error
     recommended: true
@@ -88,7 +88,7 @@ rules:
       functionOptions:
         match: "^[a-z0-9_]+$"
   fw-query-param-underscore-case:
-    description: Parameter should be in underscore case
+    description: Query parameter should be in underscore case
     given: $..parameters[?(@.in == 'query')].name
     severity: error
     recommended: true
@@ -98,7 +98,7 @@ rules:
       functionOptions:
         match: "^[a-z0-9_]+$"
   fw-form-param-underscore-case:
-    description: Parameter should be in underscore case
+    description: Form data parameter should be in underscore case
     given: $..parameters[?(@.in == 'formData')].name
     severity: error
     recommended: true
