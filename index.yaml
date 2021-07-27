@@ -3,8 +3,6 @@ formats:
 extends:
   - 'spectral:oas'
 rules:
-  #  Violating OPTIONS from api-tools is treated as severity ERROR
-  #  https://github.com/freshdesk/api-tools/blob/master/configs/options.json
   info-description: error
   info-contact: error
   operation-tag-defined: error
@@ -77,9 +75,8 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^\/([a-z0-9]+(-[a-z0-9]+)*)?(\/[a-z0-9]+(-[a-z0-9]+)*|\/{.+})*$"
+        match: "^\/(((api\/_)?)|([a-z0-9]+(-[a-z0-9]+)*))?(\/[a-z0-9]+(-[a-z0-9]+)*|\/{.+})*$"
   fw-path-param-underscore-case:
-    #ASK: What about [query, header, formData, body] params?
     description: Parameter should be in underscore case
     given: $..parameters[?(@.in == 'path')].name
     severity: error
