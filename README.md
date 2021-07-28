@@ -66,10 +66,6 @@ Schema properties should have an example value defined
 
 Schema properties should be in underscore case
 
-## fw-no-local-definition
-
-Schema object should be defined in `definitions`
-
 ## fw-ensure-no-legacy-tags
 
 Tags should not have legacy in its name

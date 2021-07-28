@@ -1,6 +1,6 @@
 {
   "name": "fw-style-guide",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Spectral rules for Freshworks API",
   "main": "index.yaml",
   "scripts": {
