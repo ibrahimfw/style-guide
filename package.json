@@ -1,7 +1,10 @@
 {
-  "name": "fw-style-guide",
-  "version": "0.0.3",
-  "description": "Spectral rules for Freshworks API",
+  "name": "@freshworks/oas",
+  "version": "0.0.1",
+  "description": "Freshworks style guide for REST API",
+  "keywords": [
+    "oas"
+  ],
   "main": "index.yaml",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,14 +12,14 @@
   "files": [
     "functions/**"
   ],
-  "author": "Mohamed Ibrahim",
+  "author": "Mohamed Ibrahim <mohamed.ibrahim@freshworks.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ibrahimfw/style-guide.git"
+    "url": "git+https://github.com/freshworks/oas-style-guide.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ibrahimfw/style-guide/issues"
+    "url": "https://github.com/freshworks/oas-style-guide/issues"
   },
-  "homepage": "https://github.com/ibrahimfw/style-guide#readme"
+  "homepage": "https://github.com/freshworks/oas-style-guide#readme"
 }
