@@ -10,7 +10,7 @@ Lint rules to validate Open API 2.0 Specification using [Spectral](https://stopl
 ### YAML
 
     extends:
-	  - 'fw-style-guide'
+	  - freshworks:oas
 	rules:
 	  ...
 
@@ -18,14 +18,16 @@ Lint rules to validate Open API 2.0 Specification using [Spectral](https://stopl
 
 
      {
-        "extends": ["fw-style-guide"],
+        "extends": [
+            "freshworks:oas"
+        ],
         "rules": {
-          ...
+            ...
         }
     }
 
 # Rules
-Some of the rules are used from ***spectral:oas*** as it is and overridden the severity to **ERROR**. Rules that are not extended from ***spectral:oas*** will have prefix `fw-`.
+Some rules are used from ***spectral:oas*** as it is and overridden the severity to **ERROR**. Rules that are not extended from ***spectral:oas*** will have prefix `fw-`.
 
 > Severity is set to **ERROR** for all rules defined below. Individual  
 > projects can override severity level to suit their needs.
