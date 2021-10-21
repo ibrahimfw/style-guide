@@ -20,7 +20,7 @@ rules:
   fw-operation-summary:
     description: Each operation should have `summary`
     formats: [ "oas2", "oas3" ]
-    given: $.paths[*][*]
+    given: $.paths[*][post,get,put,patch,delete]
     severity: error
     recommended: true
     then:
