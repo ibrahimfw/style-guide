@@ -10,7 +10,7 @@ Lint rules to validate Open API 2.0 Specification using [Spectral](https://stopl
 ### YAML
 
     extends:
-	  - freshworks:oas
+	  - https://unpkg.com/@freshworks/oas
 	rules:
 	  ...
 
@@ -19,7 +19,7 @@ Lint rules to validate Open API 2.0 Specification using [Spectral](https://stopl
 
      {
         "extends": [
-            "freshworks:oas"
+            "https://unpkg.com/@freshworks/oas"
         ],
         "rules": {
             ...
