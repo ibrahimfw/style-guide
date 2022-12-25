@@ -1,5 +1,6 @@
 formats:
   - oas2
+  - oas3
 extends:
   - 'spectral:oas'
 rules:
@@ -10,7 +11,6 @@ rules:
   operation-tags: error
   fw-info-license:
     description: Info object should contain `license` object
-    formats: [ "oas2", "oas3" ]
     given: $.info
     severity: error
     recommended: true
@@ -19,7 +19,6 @@ rules:
       function: truthy
   fw-operation-summary:
     description: Each operation should have `summary`
-    formats: [ "oas2", "oas3" ]
     given: $.paths[*][post,get,put,patch,delete]
     severity: error
     recommended: true
@@ -28,8 +27,7 @@ rules:
       function: truthy
   fw-schema-properties-example:
     description: Schema properties should have an example value defined
-    formats: [ "oas2" ]
-    given: $.definitions..properties[*]
+    given: $.definitions..properties[*] || $.components.schemas..properties[*]
     severity: error
     recommended: true
     then:
@@ -37,8 +35,7 @@ rules:
       function: truthy
   fw-properties-underscore-case:
     description: Schema properties should be in underscore case
-    formats: [ "oas2" ]
-    given: $.definitions..properties[*]~
+    given: $.definitions..properties[*]~ || $.components.schemas..properties[*]~
     severity: error
     recommended: true
     message: Schema property `{{property}}` should be in underscore case
@@ -48,7 +45,6 @@ rules:
         match: "^[a-z0-9_]+$"
   fw-ensure-no-legacy-tags:
     description: Tags should not have legacy in its name
-    formats: [ "oas2", "oas3" ]
     given: $.tags[*]
     severity: error
     recommended: true
@@ -68,7 +64,7 @@ rules:
         match: "^\/(((api\/_)?)|([a-z0-9]+(-[a-z0-9]+)*))?(\/[a-z0-9]+(-[a-z0-9]+)*|\/{.+})*$"
   fw-path-param-underscore-case:
     description: Path parameter should be in underscore case
-    given: $..parameters[?(@.in == 'path')].name
+    given: $..parameters[?(@.in == 'path')].name || $..components.parameters[?(@.in == 'path')].name
     severity: error
     recommended: true
     message: Path param `{{value}}` should be in underscore case
@@ -78,7 +74,7 @@ rules:
         match: "^[a-z0-9_]+$"
   fw-query-param-underscore-case:
     description: Query parameter should be in underscore case
-    given: $..parameters[?(@.in == 'query')].name
+    given: $..parameters[?(@.in == 'query')].name || $..components.parameters[?(@.in == 'query')].name
     severity: error
     recommended: true
     message: Query param `{{value}}` should be in underscore case
@@ -88,7 +84,7 @@ rules:
         match: "^[a-z0-9_]+$"
   fw-form-param-underscore-case:
     description: Form data parameter should be in underscore case
-    given: $..parameters[?(@.in == 'formData')].name
+    given: $..parameters[?(@.in == 'formData')].name || $..components.parameters[?(@.in == 'formData')].name
     severity: error
     recommended: true
     message: Form param `{{value}}` should be in underscore case
