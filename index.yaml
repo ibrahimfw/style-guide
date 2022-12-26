@@ -35,7 +35,7 @@ rules:
       function: truthy
   fw-properties-underscore-case:
     description: Schema properties should be in underscore case
-    given: $.definitions..properties[*]~ || $.components.schemas..properties[*]~
+    given: $.[definitions,components]..properties[*]~
     severity: error
     recommended: true
     message: Schema property `{{property}}` should be in underscore case
@@ -64,7 +64,7 @@ rules:
         match: "^\/(((api\/_)?)|([a-z0-9]+(-[a-z0-9]+)*))?(\/[a-z0-9]+(-[a-z0-9]+)*|\/{.+})*$"
   fw-path-param-underscore-case:
     description: Path parameter should be in underscore case
-    given: $..parameters[?(@.in == 'path')].name || $..components.parameters[?(@.in == 'path')].name
+    given: $..parameters[?(@.in == 'path')].name
     severity: error
     recommended: true
     message: Path param `{{value}}` should be in underscore case
