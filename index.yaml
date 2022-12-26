@@ -85,7 +85,7 @@ rules:
         match: "^[a-z0-9_]+$"
   fw-form-param-underscore-case:
     description: Form data parameter should be in underscore case
-    given: $..parameters[?(@.in == 'formData')].name || $..components.parameters[?(@.in == 'formData')].name
+    given: $..parameters[?(@.in == 'formData')].name
     severity: error
     recommended: true
     message: Form param `{{value}}` should be in underscore case
