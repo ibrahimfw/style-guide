@@ -44,10 +44,11 @@ rules:
       functionOptions:
         match: "^[a-z0-9_]+$"
   fw-ensure-no-legacy-tags:
-    description: Tags `{{value}}` should not have legacy in its name
+    description: Tags should not have legacy in its name
     given: $.tags[*]
     severity: error
     recommended: true
+    message: Tag `{{value}}` should not have "legacy" in its name
     then:
       field: name
       function: pattern
