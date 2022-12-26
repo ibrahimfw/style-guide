@@ -1,6 +1,6 @@
 {
   "name": "@freshworks/oas",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Freshworks style guide for REST API",
   "keywords": [
     "oas"

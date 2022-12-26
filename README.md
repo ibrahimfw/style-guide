@@ -1,5 +1,5 @@
 
-# Freshworks OpenAPI 2.0 Style Guide
+# Freshworks OpenAPI 2.0 and 3.0.x Style Guide
 
 Lint rules to validate Open API 2.0 and 3.0.x Specification using [Spectral](https://stoplight.io/open-source/spectral/). This extends ***spectral:oas*** package and adds custom rules on top of it.
 
