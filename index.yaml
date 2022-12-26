@@ -44,7 +44,7 @@ rules:
       functionOptions:
         match: "^[a-z0-9_]+$"
   fw-ensure-no-legacy-tags:
-    description: Tags should not have legacy in its name
+    description: Tags `{{value}}` should not have legacy in its name
     given: $.tags[*]
     severity: error
     recommended: true
@@ -74,7 +74,7 @@ rules:
         match: "^[a-z0-9_]+$"
   fw-query-param-underscore-case:
     description: Query parameter should be in underscore case
-    given: $..parameters[?(@.in == 'query')].name || $..components.parameters[?(@.in == 'query')].name
+    given: $..parameters[?(@.in == 'query')].name
     severity: error
     recommended: true
     message: Query param `{{value}}` should be in underscore case
